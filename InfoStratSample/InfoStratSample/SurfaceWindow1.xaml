@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     xmlns:ve="clr-namespace:InfoStrat.VE;assembly=InfoStrat.VE"
+    xmlns:sve="clr-namespace:InfoStrat.VE.NUI;assembly=InfoStrat.VE.NUI"
     Title="InfoStratSample"
     >
   <s:SurfaceWindow.Resources>
@@ -10,8 +11,19 @@
   </s:SurfaceWindow.Resources>
 
   <Grid Background="{StaticResource WindowBackground}" >
-        <Grid Margin="20,20,20,20">
-            <ve:VEMap Margin="10,10,10,10" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="10,50,0,0">
+            <TextBlock Text="Test" />
+              <s:SurfaceRadioButton GroupName="MapTypeRB" Content="Aerial" IsChecked="True" Checked="SurfaceRadioButton_Click1"/>
+              <s:SurfaceRadioButton GroupName="MapTypeRB" Content="Hybrid" Checked="SurfaceRadioButton_Click2"/>
+              <s:SurfaceRadioButton GroupName="MapTypeRB" Content="Road" Checked="SurfaceRadioButton_Click3"/>
+            <s:SurfaceButton Content="Navigate to Stavanger" Click="SurfaceButton_Click2" />
+        </StackPanel>
+        <Grid Margin="20,20,20,20" Grid.Column="1">
+            <sve:SurfaceVEMap Name="SVEMap" Margin="10,10,10,10"/>
         </Grid>
     </Grid>
 </s:SurfaceWindow>

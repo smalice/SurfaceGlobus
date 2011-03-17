@@ -31,6 +31,7 @@ namespace InfoStratSample
 
             // Add handlers for Application activation events
             AddActivationHandlers();
+            SVEMap.MapStyle = InfoStrat.VE.VEMapStyle.Aerial;
         }
 
 
@@ -98,6 +99,39 @@ namespace InfoStratSample
         private void OnApplicationDeactivated(object sender, EventArgs e)
         {
             //TODO: disable audio, animations here
+        }
+
+        private void Rectangle_IsMouseCaptureWithinChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void SurfaceRadioButton_Click1(object sender, RoutedEventArgs e)
+        {
+            if (SVEMap != null)
+                SVEMap.MapStyle = InfoStrat.VE.VEMapStyle.Aerial;
+        }
+
+        private void SurfaceRadioButton_Click2(object sender, RoutedEventArgs e)
+        {
+            SVEMap.MapStyle = InfoStrat.VE.VEMapStyle.Hybrid;
+        }
+
+        private void SurfaceRadioButton_Click3(object sender, RoutedEventArgs e)
+        {
+            SVEMap.MapStyle = InfoStrat.VE.VEMapStyle.Road;
+        }
+
+        private void SurfaceButton_Click2(object sender, RoutedEventArgs e)
+        {
+            SVEMap.FlyTo(new InfoStrat.VE.VELatLong(58.9, 5.9), -80, 0,30000, null);
+            //new EventHandler(MetodRotate)
+        }
+
+        void MetodRotate(object sender, EventArgs args)
+        {
+            SVEMap.Yaw = 0;
+            SVEMap.Pitch = -90;
         }
     }
 }
