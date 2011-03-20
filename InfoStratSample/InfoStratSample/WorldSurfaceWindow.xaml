@@ -1,0 +1,43 @@
+﻿<s:SurfaceWindow x:Class="InfoStratSample.WorldSurfaceWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+    xmlns:ve="clr-namespace:InfoStrat.VE;assembly=InfoStrat.VE"
+    xmlns:sve="clr-namespace:InfoStrat.VE.NUI;assembly=InfoStrat.VE.NUI"
+    Title="InfoStratSample"
+    >
+  <s:SurfaceWindow.Resources>
+    <ImageBrush x:Key="WindowBackground" Stretch="None" Opacity="0.6" 
+                ImageSource="pack://application:,,,/Resources/WindowBackground.jpg"/>
+  </s:SurfaceWindow.Resources>
+
+  <Grid Name="MainGrid" Background="{StaticResource WindowBackground}" >
+      <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="200"/>
+          <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <sve:SurfaceVEMap Name="SVEMap" Grid.ColumnSpan="2"/>
+      
+      <Border x:Name="BDRounded" BorderThickness="0" CornerRadius="15" Background="White" 
+              Opacity="0.5" Margin="-15,50,0,50">
+      </Border>
+      <StackPanel Margin="0,0,0,0" Background="Silver">
+          <StackPanel.OpacityMask>
+              <VisualBrush Visual="{Binding ElementName BDRounded}" />
+          </StackPanel.OpacityMask>
+      </StackPanel>
+      <StackPanel Margin="0,50,0,50">
+          <s:SurfaceButton Height="36" Width="52" Click="Hide_Click" 
+                           HorizontalAlignment="Right" Margin="0,7,7,0">
+              <Image Name="ImageArrow" Source="/InfoStratSample;component/Resources/icon1.png" />
+          </s:SurfaceButton>
+            <StackPanel Name="SPMenuHiding" Margin="0,0,0,0">
+                <s:SurfaceRadioButton GroupName="MapTypeRB" Content="Aerial style" IsChecked="True" 
+                                    Checked="RBAriel_Click" />
+                <s:SurfaceRadioButton GroupName="MapTypeRB" Content="Road style" Checked="RBRoad_Click" />
+                <s:SurfaceRadioButton GroupName="MapTypeRB" Content="Hybrid style" Checked="RBHybrid_Click" />
+                <s:SurfaceButton Content="Navigate to Stavanger" Click="Stavanger_Click" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</s:SurfaceWindow>

@@ -20,12 +20,13 @@ namespace InfoStratSample
     /// <summary>
     /// Interaction logic for SurfaceWindow1.xaml
     /// </summary>
-    public partial class SurfaceWindow1 : SurfaceWindow
+    public partial class WorldSurfaceWindow : SurfaceWindow
     {
+        private bool isCollapsed;
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public SurfaceWindow1()
+        public WorldSurfaceWindow()
         {
             InitializeComponent();
 
@@ -106,32 +107,42 @@ namespace InfoStratSample
 
         }
 
-        private void SurfaceRadioButton_Click1(object sender, RoutedEventArgs e)
+        private void RBAriel_Click(object sender, RoutedEventArgs e)
         {
             if (SVEMap != null)
                 SVEMap.MapStyle = InfoStrat.VE.VEMapStyle.Aerial;
         }
 
-        private void SurfaceRadioButton_Click2(object sender, RoutedEventArgs e)
+        private void RBHybrid_Click(object sender, RoutedEventArgs e)
         {
             SVEMap.MapStyle = InfoStrat.VE.VEMapStyle.Hybrid;
         }
 
-        private void SurfaceRadioButton_Click3(object sender, RoutedEventArgs e)
+        private void RBRoad_Click(object sender, RoutedEventArgs e)
         {
             SVEMap.MapStyle = InfoStrat.VE.VEMapStyle.Road;
         }
 
-        private void SurfaceButton_Click2(object sender, RoutedEventArgs e)
+        private void Stavanger_Click(object sender, RoutedEventArgs e)
         {
             SVEMap.FlyTo(new InfoStrat.VE.VELatLong(58.9, 5.9), -80, 0,30000, null);
-            //new EventHandler(MetodRotate)
         }
 
-        void MetodRotate(object sender, EventArgs args)
+        private void Hide_Click(object sender, RoutedEventArgs e)
         {
-            SVEMap.Yaw = 0;
-            SVEMap.Pitch = -90;
+            if (isCollapsed)
+            {
+                MainGrid.ColumnDefinitions.First().Width = new GridLength(200);
+                SPMenuHiding.Visibility = Visibility.Visible;
+                ImageArrow.Source = new BitmapImage(new Uri( ImageArrow.Source.ToString().Replace("icon2.png", "icon1.png")));
+            }
+            else
+            {
+                MainGrid.ColumnDefinitions.First().Width = new GridLength(60);
+                SPMenuHiding.Visibility = Visibility.Hidden;
+                ImageArrow.Source = new BitmapImage(new Uri(ImageArrow.Source.ToString().Replace("icon1.png", "icon2.png")));
+            }
+            isCollapsed = !isCollapsed;
         }
     }
 }
