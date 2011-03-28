@@ -14,6 +14,8 @@ using System.Windows.Threading;
 using Microsoft.Surface;
 using Microsoft.Surface.Presentation;
 using Microsoft.Surface.Presentation.Controls;
+using InfoStrat.VE.NUI;
+using InfoStratSample.Model;
 
 namespace InfoStratSample
 {
@@ -23,18 +25,32 @@ namespace InfoStratSample
     public partial class WorldSurfaceWindow : SurfaceWindow
     {
         private bool isCollapsed;
+        private DataModel dataModel;
         /// <summary>
         /// Default constructor.
         /// </summary>
         public WorldSurfaceWindow()
         {
+            dataModel = new DataModel();
             InitializeComponent();
-
+            this.DataContext = dataModel;
             // Add handlers for Application activation events
             AddActivationHandlers();
             SVEMap.MapStyle = InfoStrat.VE.VEMapStyle.Aerial;
+            //Contacts.PreviewContactDownEvent += 
+            //    new RoutedEvent(rout);
+            //SurfaceVEPushPin pp = new SurfaceVEPushPin(new InfoStrat.VE.VELatLong(58.9, 5.9));
+            //pp.Content = "Stavanger";
+           
+            ////SVEMap.AddRegisteredPosition(pp, new InfoStrat.VE.VELatLong(58.9, 5.9));
+            //SVEMap.Items.Add(pp);
+            
         }
 
+        //private void rout()
+        //{
+        //    bool f = true;
+        //}
 
         /// <summary>
         /// Occurs when the window is about to close. 
@@ -144,5 +160,57 @@ namespace InfoStratSample
             }
             isCollapsed = !isCollapsed;
         }
+
+        private int oldTimeStamp;
+        private bool isInDoubleClick = false;
+
+        private void SVEMap_PreviewContactDown(object sender, ContactEventArgs e)
+        {
+            if (RBNybrid.IsChecked.Value)
+            {
+                SurfaceVEPushPin pp = new SurfaceVEPushPin();
+                var pos = e.Contact.GetPosition(SVEMap);
+                //var p = SVEMap.PointFromScreen(pos);
+                var ll = SVEMap.PointToLatLong(pos);
+                pp.Longitude = ll.Longitude;
+                pp.Latitude = ll.Latitude;
+                pp.Content = string.Format("position1: x:{0} y:{1}, positionfrom screen x:{2} y:{3}, latitude: {4}, longitude: {5}",
+                    pos.X, pos.Y, pos.X, pos.Y, ll.Longitude, ll.Latitude);
+                SVEMap.Items.Add(pp);
+                return;
+            }
+
+            if (e.Contact.IsFingerRecognized && isInDoubleClick && (e.Timestamp - oldTimeStamp) < 300)
+            {
+                var p = e.Contact.GetPosition(SVEMap);
+                var ll = SVEMap.PointToLatLong(p);
+                SVEMap.FlyTo(ll, SVEMap.Pitch, SVEMap.Yaw, SVEMap.Altitude / 5, null);
+                isInDoubleClick = false;
+            }
+            else if (e.Contact.IsFingerRecognized && isInDoubleClick && (e.Timestamp - oldTimeStamp) > 299)
+            {
+                isInDoubleClick = false;
+            }
+            if (e.Contact.IsFingerRecognized && !isInDoubleClick)
+            {
+                oldTimeStamp = e.Timestamp;
+                isInDoubleClick = true;
+            }
+
+            
+        }
+
+        //private void SVEMap_ContactDown(object sender, ContactEventArgs e)
+        //{
+        //    SurfaceVEPushPin pp = new SurfaceVEPushPin();
+        //    var pos = e.Contact.GetPosition(SVEMap);
+        //    //var p = SVEMap.PointFromScreen(pos);
+        //    var ll = SVEMap.PointToLatLong(pos);
+        //    pp.Longitude = ll.Longitude;
+        //    pp.Latitude = ll.Latitude;
+        //    pp.Content = string.Format("position1: x:{0} y:{1}, positionfrom screen x:{2} y:{3}, latitude: {4}, longitude: {5}", 
+        //        pos.X, pos.Y, pos.X, pos.Y, ll.Longitude, ll.Latitude);
+        //    SVEMap.Items.Add(pp);
+        //}
     }
 }

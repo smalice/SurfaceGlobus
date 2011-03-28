@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Location>
+    <Name>Stavanger</Name>
+    <Longitude>5.70409334303234</Longitude>
+    <Latitude>58.9008184604821</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Maskinveien 24, 4033 Stavanger</Address>
+    <Tlf>+47 51 44 62 01</Tlf>
+  </Location>
+  <Location>
+    <Name>Bergen</Name>
+    <Longitude>5.32137717093401</Longitude>
+    <Latitude>60.3986847153089</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Postboks 3950, Dreggen, 5835 Bergen</Address>
+    <Tlf>+47 55 90 66 01</Tlf>
+  </Location>
+  <Location>
+    <Name>Oslo</Name>
+    <Longitude>10.6769830840103</Longitude>
+    <Latitude>59.9239815134723</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Hoffsveien 1D, 0275 Oslo</Address>
+    <Tlf>+47 24 12 80 01</Tlf>
+  </Location>
+  <Location>
+    <Name>Trondheim</Name>
+    <Longitude>10.4122828778019</Longitude>
+    <Latitude>63.4349967197788</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Beddingen 10, 7014 Trondheim</Address>
+    <Tlf>+47 73 52 10 77</Tlf>
+  </Location>
+  <Location>
+    <Name>Fredrikstad</Name>
+    <Longitude>10.9380747728316</Longitude>
+    <Latitude>59.207641689965</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Kråkerøyvn. 2, 1671 Kråkerøy</Address>
+    <Tlf>+47 69 35 68 01</Tlf>
+  </Location>
+</ArrayOfLocation>
