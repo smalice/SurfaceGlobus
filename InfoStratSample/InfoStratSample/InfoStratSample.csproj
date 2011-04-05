@@ -101,7 +101,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CapPushPin.cs" />
+    <Compile Include="LocationView.xaml.cs">
+      <DependentUpon>LocationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MapPushPin.xaml.cs">
+      <DependentUpon>MapPushPin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\DataModel.cs" />
     <Compile Include="Model\Location.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,11 +152,11 @@
     <Resource Include="Resources\WindowBackground.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Themes\CapPushPin.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="LocationView.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Generic.xaml">
+    <Page Include="MapPushPin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

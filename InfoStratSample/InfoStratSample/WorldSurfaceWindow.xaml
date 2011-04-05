@@ -1,63 +1,123 @@
-﻿<s:SurfaceWindow x:Class="InfoStratSample.WorldSurfaceWindow"
+﻿<s:SurfaceWindow
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     xmlns:ve="clr-namespace:InfoStrat.VE;assembly=InfoStrat.VE"
     xmlns:sve="clr-namespace:InfoStrat.VE.NUI;assembly=InfoStrat.VE.NUI"
     xmlns:local="clr-namespace:InfoStratSample"
-    Title="InfoStratSample"
-    >
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" 
+    x:Class="InfoStratSample.WorldSurfaceWindow"
+    Title="InfoStratSample">
+    
   <s:SurfaceWindow.Resources>
     <ImageBrush x:Key="WindowBackground" Stretch="None" Opacity="0.6" 
                 ImageSource="pack://application:,,,/Resources/WindowBackground.jpg"/>
-  </s:SurfaceWindow.Resources>
+    <Storyboard x:Key="OnCloseMeny">
+    	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
+                                       Storyboard.TargetName="BDRounded">
+    		<SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+    		<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-140"/>
+    	</DoubleAnimationUsingKeyFrames>
+    	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
+                                       Storyboard.TargetName="stackPanel">
+    		<SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+    		<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-140"/>
+    	</DoubleAnimationUsingKeyFrames>
+    	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
+                                       Storyboard.TargetName="stackPanel1">
+    		<SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+    		<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-140"/>
+    	</DoubleAnimationUsingKeyFrames>
+    </Storyboard>
 
-  <Grid Name="MainGrid" Background="{StaticResource WindowBackground}" >
-        <Grid.Resources>            
-            <DataTemplate x:Key="StandardPushPinTemplate">
-                <local:CapPushPin Latitude="{Binding Latitude}"
-                              Longitude="{Binding Longitude}"
-                              PushPinBackground="Green"
-                              PinVisible="{Binding IsVisible}">
-                    <StackPanel>
-                        <TextBlock Text="{Binding Name}" />
-                        <TextBlock Text="{Binding Address}" />
-                        <TextBlock Text="{Binding TlfNorway}" />
-                        <TextBlock Text="{Binding Tlf}" />
-                </StackPanel>
-                </local:CapPushPin>
+        <Storyboard x:Key="OnOpenMeny">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
+                                       Storyboard.TargetName="BDRounded">
+                <SplineDoubleKeyFrame KeyTime="0" Value="-140"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
+                                       Storyboard.TargetName="stackPanel">
+                <SplineDoubleKeyFrame KeyTime="0" Value="-140"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
+                                       Storyboard.TargetName="stackPanel1">
+                <SplineDoubleKeyFrame KeyTime="0" Value="-140"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </s:SurfaceWindow.Resources>
+
+  <Grid x:Name="MainGrid" >
+      <Grid.Resources>   
+         <DataTemplate x:Key="StandardPushPinTemplate">
+                <local:MapPushPin DataContext="{Binding}" Panel.ZIndex="1"/>
             </DataTemplate>
-
-        </Grid.Resources>
-        <Grid.ColumnDefinitions>
+      
+      </Grid.Resources>
+      
+      <Grid.Background>
+          <StaticResource ResourceKey="WindowBackground"/>
+      </Grid.Background>
+      
+      <Grid.ColumnDefinitions>
           <ColumnDefinition Width="200"/>
           <ColumnDefinition />
       </Grid.ColumnDefinitions>
-        <sve:SurfaceVEMap Name="SVEMap" Grid.ColumnSpan="2" 
+
+        <sve:SurfaceVEMap x:Name="SVEMap" Grid.ColumnSpan="2" Panel.ZIndex="0"
                           s:Contacts.PreviewContactDown="SVEMap_PreviewContactDown"
                           ItemsSource="{Binding Locations}"
                           ItemTemplate="{StaticResource StandardPushPinTemplate}">
         </sve:SurfaceVEMap>
 
-            <Border x:Name="BDRounded" BorderThickness="0" CornerRadius="15" Background="White" 
-              Opacity="0.5" Margin="-15,50,0,50">
+        <Border x:Name="BDRounded" BorderThickness="0" CornerRadius="15" Background="#FF595959" 
+              Opacity="0.5" Margin="-15,50,0,50" RenderTransformOrigin="0.5,0.5">
+          <Border.RenderTransform>
+              <TransformGroup>
+                  <ScaleTransform/>
+                  <SkewTransform/>
+                  <RotateTransform/>
+                  <TranslateTransform/>
+              </TransformGroup>
+          </Border.RenderTransform>
       </Border>
-      <StackPanel Margin="0,0,0,0" Background="Silver">
+      
+      <StackPanel x:Name="stackPanel" Margin="0,0,0,0" Background="Silver" RenderTransformOrigin="0.5,0.5">
+          <StackPanel.RenderTransform>
+              <TransformGroup>
+                  <ScaleTransform/>
+                  <SkewTransform/>
+                  <RotateTransform/>
+                  <TranslateTransform/>
+              </TransformGroup>
+          </StackPanel.RenderTransform>
           <StackPanel.OpacityMask>
               <VisualBrush Visual="{Binding ElementName BDRounded}" />
           </StackPanel.OpacityMask>
       </StackPanel>
-      <StackPanel Margin="0,50,0,50">
+      <StackPanel x:Name="stackPanel1" Margin="0,50,0,50" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="1">
+          <StackPanel.RenderTransform>
+              <TransformGroup>
+                  <ScaleTransform/>
+                  <SkewTransform/>
+                  <RotateTransform/>
+                  <TranslateTransform/>
+              </TransformGroup>
+          </StackPanel.RenderTransform>
           <s:SurfaceButton Height="36" Width="52" Click="Hide_Click" 
-                           HorizontalAlignment="Right" Margin="0,7,7,0">
-              <Image Name="ImageArrow" Source="/InfoStratSample;component/Resources/icon1.png" />
+                           HorizontalAlignment="Right" Margin="0,7,7,0" Background="#33595959">
+              <Image x:Name="ImageArrow" Source="/InfoStratSample;component/Resources/icon1.png" Opacity="0.5" />
           </s:SurfaceButton>
-            <StackPanel Name="SPMenuHiding" Margin="0,0,0,0">
+            <StackPanel x:Name="SPMenuHiding" Margin="0,0,0,0">
                 <s:SurfaceRadioButton GroupName="MapTypeRB" Content="Aerial style" IsChecked="True" 
                                     Checked="RBAriel_Click" />
                 <s:SurfaceRadioButton GroupName="MapTypeRB" Content="Road style" Checked="RBRoad_Click" />
-                <s:SurfaceRadioButton GroupName="MapTypeRB" Content="Hybrid style" Checked="RBHybrid_Click" Name="RBNybrid"/>
-                <s:SurfaceButton Content="Navigate to Stavanger" Click="Stavanger_Click" />
+                <s:SurfaceRadioButton GroupName="MapTypeRB" Content="Hybrid style" Checked="RBHybrid_Click" x:Name="RBNybrid"/>
+                <s:SurfaceButton Content="Navigate to Stavanger" Click="Stavanger_Click" Background="#33595959" />
             </StackPanel>
         </StackPanel>
     </Grid>

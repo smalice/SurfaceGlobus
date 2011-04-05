@@ -1,43 +1,348 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Location>
+    <Country>Norway</Country>
     <Name>Stavanger</Name>
     <Longitude>5.70409334303234</Longitude>
     <Latitude>58.9008184604821</Latitude>
     <Altitude>0</Altitude>
     <Address>Maskinveien 24, 4033 Stavanger</Address>
     <Tlf>+47 51 44 62 01</Tlf>
+    <CountryTlf>+47 24 12 80 00</CountryTlf>
   </Location>
   <Location>
+    <Country>Norway</Country>
     <Name>Bergen</Name>
     <Longitude>5.32137717093401</Longitude>
     <Latitude>60.3986847153089</Latitude>
     <Altitude>0</Altitude>
     <Address>Postboks 3950, Dreggen, 5835 Bergen</Address>
     <Tlf>+47 55 90 66 01</Tlf>
+    <CountryTlf>+47 24 12 80 00</CountryTlf>
   </Location>
   <Location>
+    <Country>Norway</Country>
     <Name>Oslo</Name>
     <Longitude>10.6769830840103</Longitude>
     <Latitude>59.9239815134723</Latitude>
     <Altitude>0</Altitude>
     <Address>Hoffsveien 1D, 0275 Oslo</Address>
     <Tlf>+47 24 12 80 01</Tlf>
+    <CountryTlf>+47 24 12 80 00</CountryTlf>
   </Location>
   <Location>
+    <Country>Norway</Country>
     <Name>Trondheim</Name>
     <Longitude>10.4122828778019</Longitude>
     <Latitude>63.4349967197788</Latitude>
     <Altitude>0</Altitude>
     <Address>Beddingen 10, 7014 Trondheim</Address>
     <Tlf>+47 73 52 10 77</Tlf>
+    <CountryTlf>+47 24 12 80 00</CountryTlf>
   </Location>
   <Location>
+    <Country>Morocco</Country>
+    <Name>Casablanca</Name>
+    <Longitude>-7.638635</Longitude>
+    <Latitude>33.543682</Latitude>
+    <Altitude>0</Altitude>
+    <Address>1100 boulevard Al Qods – Sidi Maârouf, 20270 Casablanca</Address>
+    <Tlf>+212 5 22 29 57 44</Tlf>
+    <CountryTlf>+212 5 22 46 18 00</CountryTlf>
+  </Location>
+  <Location>
+    <Country>Norway</Country>
     <Name>Fredrikstad</Name>
     <Longitude>10.9380747728316</Longitude>
     <Latitude>59.207641689965</Latitude>
     <Altitude>0</Altitude>
     <Address>Kråkerøyvn. 2, 1671 Kråkerøy</Address>
     <Tlf>+47 69 35 68 01</Tlf>
+    <CountryTlf>+47 24 12 80 00</CountryTlf>
+  </Location>
+  <Location>
+    <Country>Argentina</Country>
+    <Name>Buenos Aires</Name>
+    <Longitude>-58.45842361450195</Longitude>
+    <Latitude>-34.547287001198015</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Colectora Panamericana Este 1925, B1609ECM - San Isidro, Buenos Aires</Address>
+    <Tlf>+54 1147657571</Tlf>
+    <CountryTlf>+54 1147358000</CountryTlf>
+  </Location>
+  <Location>
+    <Country>Brazil</Country>
+    <Name>Sao Paulo</Name>
+    <Longitude>-46.67672395706177</Longitude>
+    <Latitude>-23.5259232510303</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Av. Francisco Matarazzo, 1500, Torre Nova York, 05001-100 - Sao Paulo - SP</Address>
+    <Tlf>+55 1135250101</Tlf>
+    <CountryTlf>+55 1135250100</CountryTlf>
+  </Location>
+  <Location>
+    <Country>Canada</Country>
+    <Name>Toronto</Name>
+    <Longitude>-79.38662767410278</Longitude>
+    <Latitude>43.649429232904296</Latitude>
+    <Altitude>0</Altitude>
+    <Address>800 Kipling Toronto, ON M8Z 5S4 Toronto</Address>
+    <Tlf>416 207 6800</Tlf>
+    <CountryTlf>416 207 6800</CountryTlf>
+  </Location>
+  <Location>
+    <Country>Canada</Country>
+    <Name>Montreal</Name>
+    <Longitude>-79.38662767410278</Longitude>
+    <Latitude>43.649429232904296</Latitude>
+    <Altitude>0</Altitude>
+    <Address>1100 René-Lévesque Blvd. West, 11th Floor,
+      Montréal, Québec H3B 4N4</Address>
+    <Tlf>514-989-4101</Tlf>
+    <CountryTlf>514-989-4100</CountryTlf>
+  </Location>
+  <Location>
+    <Country>Mexico</Country>
+    <Name>Mexico</Name>
+    <Longitude>-99.260543</Longitude>
+    <Latitude>18.742604</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Av. Guillermo GonzÃ¡lez Camarena 1600, 3er Piso Colonia Centro de Ciudad Santa Fe MÃ©xico, D.F. 01210</Address>
+    <Tlf>+ 52 (55) 85 03 24 67</Tlf>
+    <CountryTlf>+ 52 (55) 85 03 24 39</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Dallas, Texas</Name>
+    <Longitude>-96.769923</Longitude>
+    <Latitude>32.802955</Latitude>
+    <Altitude>0</Altitude>
+    <Address>1100 Empire Central Place, Suite 200, Dallas, TX 75247</Address>
+    <Tlf>1+214-253-6415</Tlf>
+    <CountryTlf>1+214-253-6415</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Dallas, Texas</Name>
+    <Longitude>-96.769923</Longitude>
+    <Latitude>32.802955</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Las Colinas Tower I,
+      201 E. John Carpenter Freeway,
+      Suite 700,
+      Irving, Texas 75062</Address>
+    <Tlf>+1 (972) 556-7001</Tlf>
+    <CountryTlf>+1 (972) 556-7000</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>New York, New York</Name>
+    <Longitude>-73.977127</Longitude>
+    <Latitude>40.758542</Latitude>
+    <Altitude>0</Altitude>
+    <Address>623 Fifth Avenue, 33rd Floor, New York, NY 10022</Address>
+    <Tlf>+1 (212) 314-8001</Tlf>
+    <CountryTlf>+1 (212) 314-8000</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Phoenix, Arizona</Name>
+    <Longitude>-112.0740373</Longitude>
+    <Latitude>33.4483771</Latitude>
+    <Altitude>0</Altitude>
+    <Address>4675 E. Cotton Center Building, Building 2, Suite 167, Phoenix, AZ 85040</Address>
+    <Tlf>602 333 3020</Tlf>
+    <CountryTlf>602 333 3000</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Cupertino, California</Name>
+    <Longitude>-122.0321823</Longitude>
+    <Latitude>37.3229978</Latitude>
+    <Altitude>0</Altitude>
+    <Address>20425 Stevens Creek Boulevard, Cupertino, CA 95014-2261</Address>
+    <Tlf>+1 (408) 850-5501</Tlf>
+    <CountryTlf>+1 (408) 850-5500</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Chicago, Illinois</Name>
+    <Longitude>-87.6297982</Longitude>
+    <Latitude>41.8781136</Latitude>
+    <Altitude>0</Altitude>
+    <Address>111 North Canal, 15th Floor, Chicago, IL 60606</Address>
+    <Tlf>+1 (312) 395-5001</Tlf>
+    <CountryTlf>+1 (312) 395-5000</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Marlborough, Massachusetts</Name>
+    <Longitude>-71.5522874</Longitude>
+    <Latitude>42.3459271</Latitude>
+    <Altitude>0</Altitude>
+    <Address>45 Bartlett Street, Marlborough, MA 01752</Address>
+    <Tlf>508 229 2019</Tlf>
+    <CountryTlf>508 573 2900</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Lee's Summit, Missouri</Name>
+    <Longitude>-94.383516</Longitude>
+    <Latitude>38.916343</Latitude>
+    <Altitude>0</Altitude>
+    <Address>777 Northwest Blue Parkway, Suite 3000, Lee's Summit, MO 64086</Address>
+    <Tlf>1+816-347-7505</Tlf>
+    <CountryTlf>1+816-347-7500</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Bloomfield, New Jersey</Name>
+    <Longitude>-74.1821551322937</Longitude>
+    <Latitude>40.83746665017121</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Central Park Corporate Campus, 400 Broadacres Drive, 4th Floor, Bloomfield, NJ 07003</Address>
+    <Tlf>+1 (973) 337-2701</Tlf>
+    <CountryTlf>+1 (973) 337-2700</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>San Juan, Puerto Rico</Name>
+    <Longitude>-66.1057217</Longitude>
+    <Latitude>18.4663338</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Tres Rios Office Building, 27 Gonzalez Giusti Avenue, Suite 502, San Patricio, Guaynabo, Puerto Rico 00968</Address>
+    <Tlf>787-304-9501</Tlf>
+    <CountryTlf>787-304-9500</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Palestine, Texas</Name>
+    <Longitude>-87.612802</Longitude>
+    <Latitude>39.0036537</Latitude>
+    <Altitude>0</Altitude>
+    <Address>200 Vista Ridge, Palestine, TX 75801</Address>
+    <Tlf>214-432-6017</Tlf>
+    <CountryTlf>214-432-6017</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Herndon, Virginia</Name>
+    <Longitude>-77.3860976</Longitude>
+    <Latitude>38.9695545</Latitude>
+    <Altitude>0</Altitude>
+    <Address>2250 Corporate Park Drive, Suite 410, Herndon, VA 20171</Address>
+    <Tlf>+1 (571) 336-1700</Tlf>
+    <CountryTlf>+1 (571) 336-1600</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Burbank, California</Name>
+    <Longitude>-118.340351</Longitude>
+    <Latitude>34.161514</Latitude>
+    <Altitude>0</Altitude>
+    <Address>3500 W. Olive Ave., Suite 600, Burbank, 91505</Address>
+    <Tlf>+1 (818) 736-8001</Tlf>
+    <CountryTlf>+1 (818) 736-8000</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Atlanta, Georgia</Name>
+    <Longitude>-84.362876</Longitude>
+    <Latitude>33.850423</Latitude>
+    <Altitude>0</Altitude>
+    <Address>3500 Lenox Road, Suite G2, Atlanta, GA 30326</Address>
+    <Tlf>1+404-806-4850</Tlf>
+    <CountryTlf>1+404-806-4200</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Rosemont, Illinois</Name>
+    <Longitude>-87.864368</Longitude>
+    <Latitude>41.994563</Latitude>
+    <Altitude>0</Altitude>
+    <Address>6400 Shafer Court, Rosemont, IL 60018</Address>
+    <Tlf>847 384 0500</Tlf>
+    <CountryTlf>847 384 6100</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Southfield, Michigan</Name>
+    <Longitude>-83.2218731</Longitude>
+    <Latitude>42.4733688</Latitude>
+    <Altitude>0</Altitude>
+    <Address>25925 Telegraph Road, #350, Southfield, MI 48034</Address>
+    <Tlf>1+248-233-3101</Tlf>
+    <CountryTlf>1+248-233-3101</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Charlotte, North Carolina</Name>
+    <Longitude>-80.843127</Longitude>
+    <Latitude>35.227087</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Transamerica Square, 
+      10th Floor, Suite 1062,
+      401 N. Tryon St.,
+      Charlotte NC 28202</Address>
+    <Tlf>704-998-5301</Tlf>
+    <CountryTlf>704-998-2510</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Jersey City, New Jersey</Name>
+    <Longitude>-74.0776417</Longitude>
+    <Latitude>40.7281575</Latitude>
+    <Altitude>0</Altitude>
+    <Address>10 Exchange Place,
+      Suite 802,
+      Jersey City, NJ 07302</Address>
+    <Tlf>201-633-7001</Tlf>
+    <CountryTlf>201-633-7000</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Cleveland, Ohio</Name>
+    <Longitude>-81.6954088</Longitude>
+    <Latitude>41.4994954</Latitude>
+    <Altitude>0</Altitude>
+    <Address>200 Skylight Office Tower,
+      1660 West Second Street,
+      Cleveland, OH 44113</Address>
+    <Tlf>+1 (216) 373-4700</Tlf>
+    <CountryTlf>+1 (216) 373-4500</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Houston, Texas</Name>
+    <Longitude>-95.3830615</Longitude>
+    <Latitude>29.7628844</Latitude>
+    <Altitude>0</Altitude>
+    <Address>4 Houston Center,
+      1331 Lamar Street,
+      Houston, TX 77010</Address>
+    <Tlf>+1 (281) 220-5481</Tlf>
+    <CountryTlf>+1 (281) 220-5000</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Victoria, Texas</Name>
+    <Longitude>-97.0035982</Longitude>
+    <Latitude>28.8052674</Latitude>
+    <Altitude>0</Altitude>
+    <Address>1309 E. Red River St.,
+      Victoria, TX 77901</Address>
+    <Tlf>316-580-6200</Tlf>
+    <CountryTlf>316-580-6200</CountryTlf>
+  </Location>
+  <Location>
+    <Country>United States</Country>
+    <Name>Manassas, Virginia</Name>
+    <Longitude>-77.4752667</Longitude>
+    <Latitude>38.7509488</Latitude>
+    <Altitude>0</Altitude>
+    <Address>9651 Hornbaker Road,
+      Manassas, VA 20109</Address>
+    <Tlf>+1 (212) 314-8000</Tlf>
+    <CountryTlf>+1 (212) 314-8000</CountryTlf>
   </Location>
 </ArrayOfLocation>

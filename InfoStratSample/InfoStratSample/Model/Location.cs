@@ -8,6 +8,18 @@ namespace InfoStratSample.Model
 {
     public class Location : INotifyPropertyChanged
     {
+        private string country;
+
+        public string Country
+        {
+            get { return country; }
+            set
+            {
+                country = value;
+                NotifyPropertyChanged("Country");
+            }
+        }
+
         private string name;
 
         public string Name
@@ -75,9 +87,16 @@ namespace InfoStratSample.Model
             }
         }
 
-        public string TlfNorway
+        private string countryTlf;
+
+        public string CountryTlf
         {
-            get { return "+47 24 12 80 00"; }
+            get { return countryTlf; }
+            set 
+            { 
+                countryTlf = value;
+                NotifyPropertyChanged("CountryTlf");
+            }
         }
 
         #region INotifyPropertyChanged Members

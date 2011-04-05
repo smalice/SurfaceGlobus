@@ -11,7 +11,11 @@ namespace InfoStratSample.Model
 {
     public class DataModel : INotifyPropertyChanged
     {
+        public static DataModel Instance;
+        public Location SelectedLocation;
+
         private ObservableCollection<Location> _locations;
+        
         public ObservableCollection<Location> Locations
         {
             get
@@ -19,6 +23,7 @@ namespace InfoStratSample.Model
                 return _locations;
             }
         }
+
 
         #region INotifyPropertyChanged Members
 
@@ -36,6 +41,7 @@ namespace InfoStratSample.Model
 
         public DataModel()
         {
+            Instance = this;
             ObservableCollection<Location> newLocations = new ObservableCollection<Location>();
             //newLocations.Add(new Location() { Name="stv"});
 
