@@ -1,0 +1,99 @@
+﻿<sve:SurfaceVEPushPin x:Class="InfoStratSample.MapPushPin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sve="clr-namespace:InfoStrat.VE.NUI;assembly=InfoStrat.VE.NUI"
+    xmlns:local="clr-namespace:InfoStratSample"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d"
+    Height="300" Width="300"
+    Latitude="{Binding Latitude}" Longitude="{Binding Longitude}">
+    
+    <sve:SurfaceVEPushPin.Resources>
+        <Style TargetType="{x:Type local:MapPushPin}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type local:MapPushPin}">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Width="100"
+                            Height="{TemplateBinding Height}"
+                            Margin="{TemplateBinding Margin}"
+                            Padding="{TemplateBinding Padding}"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            SnapsToDevicePixels="True">
+                            <StackPanel>
+
+                                <Border Background="SteelBlue"
+                                    Opacity="0.8"
+                                    CornerRadius="8"
+                                    Padding="0"
+                                    Margin="0"
+                                    BorderBrush="Gray"
+                                    BorderThickness="1"
+                                    HorizontalAlignment="Center"
+                                    SnapsToDevicePixels="True">
+                                    <StackPanel>
+                                        <s:SurfaceButton Background="Transparent"
+                                            BorderThickness="0"
+                                            Margin="-1"
+                                            Padding="8"
+                                            FontSize="12"
+                                            VerticalAlignment="Top"
+                                            HorizontalAlignment="Stretch"
+                                            Focusable="False"
+                                            SnapsToDevicePixels="True"
+                                            Content="{Binding Name}"
+                                                         Width="100"
+                                            Click="SurfaceButton_Click"/>
+                                        
+                                    </StackPanel>
+                                </Border>
+
+                                <Grid>
+                                    <Polyline StrokeThickness="1"
+                                          Stroke="Gray"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Top"
+                                          Margin="0"
+                                          Opacity="0.8"
+                                          Fill="SteelBlue">
+                                        <Polyline.Points>
+                                            <Point X="0" Y="0" />
+                                            <Point X="10"  Y="40" />
+                                            <Point X="10" Y="0" />
+                                        </Polyline.Points>
+                                    </Polyline>
+                                    <ContentPresenter />
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </sve:SurfaceVEPushPin.Resources>
+    <Grid>
+        <s:ScatterViewItem Visibility="Collapsed" Width="100" Height="100" RenderTransformOrigin="-0.05,0.02" 
+                           d:LayoutOverrides="HorizontalAlignment, VerticalAlignment"
+                           Name="ItemInfo" Opacity="0.75">
+            <s:ScatterViewItem.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="SteelBlue"/>
+                    <!--#FF2199DC-->
+                    <GradientStop Color="#FFDFE9EE" Offset="1"/>
+                </LinearGradientBrush>
+            </s:ScatterViewItem.Background>
+            <StackPanel>
+                <TextBlock Text="Address:"></TextBlock>
+                <TextBlock Text="{Binding Address}"></TextBlock>
+                <TextBlock Text="Telephone:" Margin="0,2,0,0"></TextBlock>
+                <TextBlock Text="{Binding CountryTlf}"></TextBlock>
+                <TextBlock Text="{Binding Tlf}"></TextBlock>
+            </StackPanel>
+        </s:ScatterViewItem>
+    </Grid>
+</sve:SurfaceVEPushPin>
