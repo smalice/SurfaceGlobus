@@ -8,6 +8,18 @@ namespace InfoStratSample.Model
 {
     public class Location : INotifyPropertyChanged
     {
+        private string pictureFileName;
+
+        public string PictureFileName
+        {
+            get { return "Resources/" +pictureFileName; }
+            set
+            {
+                pictureFileName = value;
+                NotifyPropertyChanged("PictureFileName");
+            }
+        }
+
         private string country;
 
         public string Country

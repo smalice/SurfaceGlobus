@@ -2,16 +2,6 @@
 <ArrayOfLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Location>
     <Country>Norway</Country>
-    <Name>Stavanger</Name>
-    <Longitude>5.70409334303234</Longitude>
-    <Latitude>58.9008184604821</Latitude>
-    <Altitude>0</Altitude>
-    <Address>Maskinveien 24, 4033 Stavanger</Address>
-    <Tlf>+47 51 44 62 01</Tlf>
-    <CountryTlf>+47 24 12 80 00</CountryTlf>
-  </Location>
-  <Location>
-    <Country>Norway</Country>
     <Name>Bergen</Name>
     <Longitude>5.32137717093401</Longitude>
     <Latitude>60.3986847153089</Latitude>
@@ -19,6 +9,7 @@
     <Address>Postboks 3950, Dreggen, 5835 Bergen</Address>
     <Tlf>+47 55 90 66 01</Tlf>
     <CountryTlf>+47 24 12 80 00</CountryTlf>
+    <PictureFileName>Images/Glommen_Brygge.jpg</PictureFileName>
   </Location>
   <Location>
     <Country>Norway</Country>
@@ -29,6 +20,7 @@
     <Address>Hoffsveien 1D, 0275 Oslo</Address>
     <Tlf>+47 24 12 80 01</Tlf>
     <CountryTlf>+47 24 12 80 00</CountryTlf>
+    <PictureFileName>Images/Oslo.jpg</PictureFileName>
   </Location>
   <Location>
     <Country>Norway</Country>
@@ -39,6 +31,7 @@
     <Address>Beddingen 10, 7014 Trondheim</Address>
     <Tlf>+47 73 52 10 77</Tlf>
     <CountryTlf>+47 24 12 80 00</CountryTlf>
+    <PictureFileName>Images/Trondheim.jpg</PictureFileName>
   </Location>
   <Location>
     <Country>Morocco</Country>
@@ -59,6 +52,17 @@
     <Address>Kråkerøyvn. 2, 1671 Kråkerøy</Address>
     <Tlf>+47 69 35 68 01</Tlf>
     <CountryTlf>+47 24 12 80 00</CountryTlf>
+  </Location>
+  <Location>
+    <Country>Norway</Country>
+    <Name>Stavanger</Name>
+    <Longitude>5.70409334303234</Longitude>
+    <Latitude>58.9008184604821</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Maskinveien 24, 4033 Stavanger</Address>
+    <Tlf>+47 51 44 62 01</Tlf>
+    <CountryTlf>+47 24 12 80 00</CountryTlf>
+    <PictureFileName>Images/svg_office.jpg</PictureFileName>
   </Location>
   <Location>
     <Country>Argentina</Country>

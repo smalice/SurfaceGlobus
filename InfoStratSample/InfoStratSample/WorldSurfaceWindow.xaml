@@ -68,8 +68,13 @@
           <ColumnDefinition />
       </Grid.ColumnDefinitions>
 
+        <local:ZoomItem x:Name="zoomItem" Panel.ZIndex="4" Margin="27,116,0,0" 
+                        Grid.Column="0" Grid.ColumnSpan="2" Height="100" VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" Width="100" Visibility="Collapsed" />
+      
         <sve:SurfaceVEMap x:Name="SVEMap" Grid.ColumnSpan="2" Panel.ZIndex="0"
                           s:Contacts.PreviewContactDown="SVEMap_PreviewContactDown"
+                          s:Contacts.ContactHoldGesture="SVEMap_ContactHoldGesture"
                           ItemsSource="{Binding Locations}"
                           ItemTemplate="{StaticResource StandardPushPinTemplate}">
         </sve:SurfaceVEMap>
@@ -118,7 +123,42 @@
                 <s:SurfaceRadioButton GroupName="MapTypeRB" Content="Road style" Checked="RBRoad_Click" />
                 <s:SurfaceRadioButton GroupName="MapTypeRB" Content="Hybrid style" Checked="RBHybrid_Click" x:Name="RBNybrid"/>
                 <s:SurfaceButton Content="Navigate to Stavanger" Click="Stavanger_Click" Background="#33595959" />
+                <s:ScatterViewItem VerticalAlignment="Bottom" Margin="0,100,0,0" Width="120" Height="120" 
+                                   HorizontalAlignment="Center"
+                                   d:LayoutOverrides="VerticalAlignment" CanScale="False" CanRotate="False" CanMove="False"
+                                   Opacity="0.5">
+                    <s:ScatterViewItem.Effect>
+                        <DropShadowEffect/>
+                    </s:ScatterViewItem.Effect>
+                    <s:ScatterViewItem.Background>
+                        <LinearGradientBrush EndPoint="0,0" StartPoint="0,1">
+                            <GradientStop Color="#FFA4B4BD" Offset="0"/>
+                            <GradientStop Color="#7FDFE9EE" Offset="1"/>
+                        </LinearGradientBrush>
+                    </s:ScatterViewItem.Background>
+                    <StackPanel>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="6,1,0,0" FontWeight="Bold" >
+                            Medarbeidere:
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,1,0,0">
+                            68 000   globalt
+                       </TextBlock>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15,1,0,0">
+                            3 500   i Norden
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="25,1,0,0">
+                            600   i Norge
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="30,1,0,0">
+                            60   i Stavanger
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="6,10,0,0" FontWeight="Bold" >
+                            Hovedkontor: Paris
+                        </TextBlock>
+                    </StackPanel>
+                </s:ScatterViewItem>
             </StackPanel>
         </StackPanel>
+      
     </Grid>
 </s:SurfaceWindow>

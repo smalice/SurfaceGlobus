@@ -37,6 +37,8 @@ namespace InfoStratSample
             this.DataContext = dataModel;
             AddActivationHandlers();
             SVEMap.MapStyle = InfoStrat.VE.VEMapStyle.Aerial;
+            zoomItem.ZoomIn += MapZoomIn;
+            zoomItem.ZoomOut += MapZoomOut;
         }
 
         #region unnecessary
@@ -120,22 +122,22 @@ namespace InfoStratSample
 
         private void SVEMap_ContactDown(object sender, ContactEventArgs e)
         {
-            if (e.Contact.IsFingerRecognized && isInDoubleClick && (e.Timestamp - oldTimeStamp) < 300)
-            {
-                var p = e.Contact.GetPosition(SVEMap);
-                var ll = SVEMap.PointToLatLong(p);
-                SVEMap.FlyTo(ll, SVEMap.Pitch, SVEMap.Yaw, SVEMap.Altitude / 5, null);
-                isInDoubleClick = false;
-            }
-            else if (e.Contact.IsFingerRecognized && isInDoubleClick && (e.Timestamp - oldTimeStamp) > 299)
-            {
-                isInDoubleClick = false;
-            }
-            if (e.Contact.IsFingerRecognized && !isInDoubleClick)
-            {
-                oldTimeStamp = e.Timestamp;
-                isInDoubleClick = true;
-            }
+            //if (e.Contact.IsFingerRecognized && isInDoubleClick && (e.Timestamp - oldTimeStamp) < 300)
+            //{
+            //    var p = e.Contact.GetPosition(SVEMap);
+            //    var ll = SVEMap.PointToLatLong(p);
+            //    SVEMap.FlyTo(ll, SVEMap.Pitch, SVEMap.Yaw, SVEMap.Altitude / 5, null);
+            //    isInDoubleClick = false;
+            //}
+            //else if (e.Contact.IsFingerRecognized && isInDoubleClick && (e.Timestamp - oldTimeStamp) > 299)
+            //{
+            //    isInDoubleClick = false;
+            //}
+            //if (e.Contact.IsFingerRecognized && !isInDoubleClick)
+            //{
+            //    oldTimeStamp = e.Timestamp;
+            //    isInDoubleClick = true;
+            //}
 
         }
 
@@ -172,6 +174,34 @@ namespace InfoStratSample
             //    isInDoubleClick = true;
             //}
 
+        }
+
+        
+        private void SVEMap_ContactHoldGesture(object sender, ContactEventArgs e)
+        {
+            zoomItem.Visibility = Visibility.Visible;
+            zoomItem.StartAnimation();
+
+            var p = e.Contact.GetPosition(MainGrid);
+            var p1 = e.Contact.GetPosition(SVEMap);
+
+            zoomItem.Margin = new Thickness(p.X-50.0, p.Y-50.0, 0, 0);
+        }
+
+
+
+        private void MapZoomIn(object sender, ContactEventArgs e)
+        {
+            var p = e.Contact.GetPosition(SVEMap);
+            var ll = SVEMap.PointToLatLong(p);
+            SVEMap.FlyTo(ll, SVEMap.Pitch, SVEMap.Yaw, SVEMap.Altitude / 5, null);
+        }
+
+        private void MapZoomOut(object sender, ContactEventArgs e)
+        {
+            var p = e.Contact.GetPosition(SVEMap);
+            var ll = SVEMap.PointToLatLong(p);
+            SVEMap.FlyTo(ll, SVEMap.Pitch, SVEMap.Yaw, SVEMap.Altitude * 5, null);
         }
     }
 }

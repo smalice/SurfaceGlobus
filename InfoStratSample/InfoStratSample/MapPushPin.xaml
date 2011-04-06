@@ -7,7 +7,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     mc:Ignorable="d"
-    Height="300" Width="300"
     Latitude="{Binding Latitude}" Longitude="{Binding Longitude}">
     
     <sve:SurfaceVEPushPin.Resources>
@@ -49,12 +48,12 @@
                                             Content="{Binding Name}"
                                                          Width="100"
                                             Click="SurfaceButton_Click"/>
-                                        
+                                        <ContentPresenter />
                                     </StackPanel>
                                 </Border>
 
                                 <Grid>
-                                    <Polyline StrokeThickness="1"
+                                    <Polyline x:Name="polyline" StrokeThickness="1"
                                           Stroke="Gray"
                                           HorizontalAlignment="Center"
                                           VerticalAlignment="Top"
@@ -67,7 +66,7 @@
                                             <Point X="10" Y="0" />
                                         </Polyline.Points>
                                     </Polyline>
-                                    <ContentPresenter />
+                                    
                                 </Grid>
                             </StackPanel>
                         </Border>
@@ -77,13 +76,12 @@
         </Style>
     </sve:SurfaceVEPushPin.Resources>
     <Grid>
-        <s:ScatterViewItem Visibility="Collapsed" Width="100" Height="100" RenderTransformOrigin="-0.05,0.02" 
+        <s:ScatterViewItem Visibility="Collapsed" Width="100" RenderTransformOrigin="-0.05,0.02" 
                            d:LayoutOverrides="HorizontalAlignment, VerticalAlignment"
                            Name="ItemInfo" Opacity="0.75">
             <s:ScatterViewItem.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <GradientStop Color="SteelBlue"/>
-                    <!--#FF2199DC-->
                     <GradientStop Color="#FFDFE9EE" Offset="1"/>
                 </LinearGradientBrush>
             </s:ScatterViewItem.Background>
@@ -93,6 +91,7 @@
                 <TextBlock Text="Telephone:" Margin="0,2,0,0"></TextBlock>
                 <TextBlock Text="{Binding CountryTlf}"></TextBlock>
                 <TextBlock Text="{Binding Tlf}"></TextBlock>
+                <Image Source="{Binding PictureFileName}" Width="100" />
             </StackPanel>
         </s:ScatterViewItem>
     </Grid>
