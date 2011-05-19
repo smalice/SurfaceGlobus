@@ -1,0 +1,178 @@
+﻿<s:SurfaceWindow x:Class="HandTesting.SurfaceWindow1"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:s="http://schemas.microsoft.com/surface/2008"
+                 xmlns:blake="clr-namespace:Blake.NUI.WPF;assembly=Blake.NUI.WPF"
+                 xmlns:blakesurf="clr-namespace:Blake.NUI.WPF.SurfaceToolkit;assembly=Blake.NUI.WPF.SurfaceToolkit"
+                 xmlns:mc="clr-namespace:InfoStrat.MotionFx.Controls;assembly=InfoStrat.MotionFx"
+                 xmlns:m="clr-namespace:InfoStrat.MotionFx;assembly=InfoStrat.MotionFx"
+                 xmlns:filters="clr-namespace:InfoStrat.MotionFx.Filters;assembly=InfoStrat.MotionFx"
+                 xmlns:controls="clr-namespace:HandMap.Controls" xmlns:Controls="clr-namespace:HandMap.Controls" WindowStyle="None"
+                 Title="HandTesting">
+    <s:SurfaceWindow.Resources>
+        <Style x:Key="ScatterViewItemStyle"
+               TargetType="{x:Type s:ScatterViewItem}">
+            <Setter Property="MinWidth"
+                    Value="300" />
+            <Setter Property="MinHeight"
+                    Value="200" />
+            <Setter Property="Center"
+                    Value="-600,-450" />
+            <Setter Property="CanRotate"
+                    Value="true" />
+            <Setter Property="Orientation"
+                    Value="-30.0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type s:ScatterViewItem}">
+                        <ContentPresenter />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Storyboard x:Key="StoryboardButtonTouchEnter">
+            <ThicknessAnimation Storyboard.TargetName="ButtonBorder"
+                                Storyboard.TargetProperty="BorderThickness"
+                                Duration="0:0:0.5"
+                                FillBehavior="HoldEnd"
+                                From="0,0,0,0"
+                                To="10,10,10,10" />
+        </Storyboard>
+
+        <Storyboard x:Key="StoryboardButtonTouchleave">
+            <ThicknessAnimation Storyboard.TargetName="ButtonBorder"
+                                Storyboard.TargetProperty="BorderThickness"
+                                Duration="0:0:0.5"
+                                FillBehavior="HoldEnd"
+                                From="10,10,10,10"
+                                To="0,0,0,0" />
+        </Storyboard>
+
+        <DataTemplate x:Key="SVITemplate">
+            <Viewbox Stretch="Uniform">
+                <Image Source="{Binding ImageSource}"
+                       Width="600"
+                       Height="450" />
+            </Viewbox>
+        </DataTemplate>
+    </s:SurfaceWindow.Resources>
+
+    <Grid Background="White">
+        <Grid>
+            <blake:InputFilter.Filter>
+                <filters:PushMotionInputFilter />
+            </blake:InputFilter.Filter>
+            <s:ScatterView Name="scatterview"
+                           ItemContainerStyle="{StaticResource ScatterViewItemStyle}"
+                           Background="{x:Null}"
+                           ItemsSource="{Binding Images}"
+                           ItemTemplate="{StaticResource SVITemplate}" />
+            <!--<blakesurf:DragDropScatterView ItemContainerStyle="{StaticResource ScatterViewItemStyle}"
+                                           Background="{x:Null}">
+                <s:ScatterViewItem x:Name="sviDesert"
+                                   Center="-600,-450"
+                                   Orientation="-30"
+                                   MinWidth="300"
+                                   MinHeight="200"
+                                   blakesurf:DragDropScatterView.AllowDrag="True">
+                    <Image Source="Images\Desert.jpg"
+                           Width="600"
+                           Height="450"></Image>
+                </s:ScatterViewItem>
+
+                <s:ScatterViewItem x:Name="sviJellyfish"
+                                   Center="-600,-450"
+                                   Orientation="-30"
+                                   MinWidth="300"
+                                   MinHeight="200"
+                                   blakesurf:DragDropScatterView.AllowDrag="True">
+                    <Image Source="Images\Jellyfish.jpg"
+                           Width="600"
+                           Height="450"></Image>
+                </s:ScatterViewItem>
+
+                <s:ScatterViewItem x:Name="sviPenguins"
+                                   Center="-600,-450"
+                                   Orientation="-30"
+                                   MinWidth="300"
+                                   MinHeight="200"
+                                   blakesurf:DragDropScatterView.AllowDrag="True">
+                    <Image Source="Images\Penguins.jpg"
+                           Width="600"
+                           Height="450"></Image>
+                </s:ScatterViewItem>
+            </blakesurf:DragDropScatterView>-->
+        </Grid>
+
+        <Grid HorizontalAlignment="Right"
+              VerticalAlignment="Stretch"
+              Background="Transparent"
+              Width="200">
+            <blake:InputFilter.Filter>
+                <filters:HoverInputFilter />
+            </blake:InputFilter.Filter>
+            <StackPanel VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="0,-200,0,0">
+                <controls:MotionToggleButton Checked="MotionToggleButtonDesert_Checked"
+                                             Unchecked="MotionToggleButtonDesert_Unchecked"
+                                             HorizontalAlignment="Center"
+                                             Margin="0,0,0,20"
+                                             Background="LightGray"
+                                             Width="110"
+                                             Height="80">
+                    <TextBlock FontSize="16"
+                               FontWeight="Bold">Desert</TextBlock>
+                </controls:MotionToggleButton>
+
+                <controls:MotionToggleButton Checked="MotionToggleButtonJellyfish_Checked"
+                                             Unchecked="MotionToggleButtonJellyfish_Unchecked"
+                                             HorizontalAlignment="Center"
+                                             Margin="0,0,0,20"
+                                             Width="110"
+                                             Height="80"
+                                             Background="Green">
+                    <TextBlock FontSize="16"
+                               FontWeight="Bold">Jellyfish</TextBlock>
+                </controls:MotionToggleButton>
+
+                <Controls:MotionToggleButton Checked="MotionToggleButtonPenguins_Checked"
+                                             Unchecked="MotionToggleButtonPenguins_Unchecked"
+                                             HorizontalAlignment="Center"
+                                             Margin="0,0,0,20"
+                                             Width="110"
+                                             Height="80"
+                                             Background="Brown">
+                    <TextBlock FontSize="16"
+                               FontWeight="Bold">Penguins</TextBlock>
+                </Controls:MotionToggleButton>
+
+                <Controls:MotionButton x:Name="ButtonShutDown"
+                                       Click="ButtonShutDown_Click"
+                                       Background="LightGray"
+                                       Margin="0,50,0,0"
+                                       Height="60"
+                                       Width="80">
+                    <TextBlock FontSize="16"
+                               FontWeight="Bold">Close</TextBlock>
+                </Controls:MotionButton>
+            </StackPanel>
+        </Grid>
+
+
+        <Image Source="Resources\InfoStratATGlogo.png"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Bottom"
+               Height="100"
+               Width="Auto" />
+
+
+        <mc:DepthView HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      IsHitTestVisible="False"
+                      MotionTrackingClient="{Binding MotionTrackingClient}"/>
+        <mc:HandVisualization IsHitTestVisible="False"
+                              MotionTrackingClient="{Binding MotionTrackingClient}" />
+    </Grid>
+</s:SurfaceWindow>
