@@ -75,7 +75,7 @@
         <sve:SurfaceVEMap x:Name="SVEMap" Grid.ColumnSpan="2" Panel.ZIndex="0"
                           s:Contacts.PreviewContactDown="SVEMap_PreviewContactDown"
                           s:Contacts.ContactHoldGesture="SVEMap_ContactHoldGesture"
-                          ItemsSource="{Binding Locations}"
+                          ItemsSource="{Binding Locations}" 
                           ItemTemplate="{StaticResource StandardPushPinTemplate}">
         </sve:SurfaceVEMap>
 
@@ -123,7 +123,7 @@
                 <s:SurfaceRadioButton GroupName="MapTypeRB" Content="Road style" Checked="RBRoad_Click" />
                 <s:SurfaceRadioButton GroupName="MapTypeRB" Content="Hybrid style" Checked="RBHybrid_Click" x:Name="RBNybrid"/>
                 <s:SurfaceButton Content="Navigate to Stavanger" Click="Stavanger_Click" Background="#33595959" />
-                <s:ScatterViewItem VerticalAlignment="Bottom" Margin="0,100,0,0" Width="120" Height="120" 
+                <s:ScatterViewItem VerticalAlignment="Bottom" Margin="0,100,75,0" Width="120" Height="120" 
                                    HorizontalAlignment="Center"
                                    d:LayoutOverrides="VerticalAlignment" CanScale="False" CanRotate="False" CanMove="False"
                                    Opacity="0.5">
@@ -137,27 +137,30 @@
                         </LinearGradientBrush>
                     </s:ScatterViewItem.Background>
                     <StackPanel>
-                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="6,1,0,0" FontWeight="Bold" >
-                            Medarbeidere:
-                        </TextBlock>
-                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,1,0,0">
-                            68 000   globalt
-                       </TextBlock>
-                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15,1,0,0">
-                            3 500   i Norden
-                        </TextBlock>
-                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="25,1,0,0">
-                            600   i Norge
-                        </TextBlock>
-                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="30,1,0,0">
-                            60   i Stavanger
-                        </TextBlock>
-                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="6,10,0,0" FontWeight="Bold" >
-                            Hovedkontor: Paris
-                        </TextBlock>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="6,1,0,0" FontWeight="Bold" ><Run Text="Medarbeidere:"/></TextBlock>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,1,0,0"><Run Text="68 000 globalt"/></TextBlock>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15,1,0,0"><Run Text="3 500 i Norden"/></TextBlock>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="25,1,0,0"><Run Text="600 i Norge"/></TextBlock>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="30,1,0,0"><Run Text="60 i Stavanger"/></TextBlock>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="6,10,0,0" FontWeight="Bold"  ><Run Text="Hovedkontor: Paris"/></TextBlock>
                     </StackPanel>
                 </s:ScatterViewItem>
             </StackPanel>
+            <s:SurfaceSlider
+                x:Name="ZoomSlider"
+                Margin="0,-200,5,0"
+                Orientation="Vertical"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                BorderThickness="0"
+                Height="460"
+                TickPlacement="BottomRight"
+                Minimum="4" 
+                Maximum="10"
+                ContactChanged="ZoomSlider_ContactChanged"
+                ContactEnter="ZoomSlider_ContactEnter"
+                ContactLeave="ZoomSlider_ContactLeave"
+                />
         </StackPanel>
       
     </Grid>

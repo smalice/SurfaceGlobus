@@ -1,34 +1,22 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Windows.Threading;
 using System.Windows.Media.Animation;
 using Microsoft.Surface;
 using Microsoft.Surface.Presentation;
-using Microsoft.Surface.Presentation.Controls;
-using InfoStrat.VE.NUI;
 using InfoStratSample.Model;
 
 namespace InfoStratSample
 {
-    /// <summary>
-    /// Interaction logic for SurfaceWindow1.xaml
-    /// </summary>
-    public partial class WorldSurfaceWindow : SurfaceWindow
+
+    public partial class WorldSurfaceWindow
     {
         private bool isCollapsed;
         private DataModel dataModel;
         private int oldTimeStamp;
         private bool isInDoubleClick = false;
+        private const double pModSlider = 5.0;
+        private bool manualSliderZoom = false;
 
         public WorldSurfaceWindow()
         {
@@ -39,6 +27,19 @@ namespace InfoStratSample
             SVEMap.MapStyle = InfoStrat.VE.VEMapStyle.Aerial;
             zoomItem.ZoomIn += MapZoomIn;
             zoomItem.ZoomOut += MapZoomOut;
+            SVEMap.CameraChanged += new EventHandler<InfoStrat.VE.VECameraChangedEventArgs>(SVEMap_CameraChanged);
+        }
+
+        void SVEMap_CameraChanged(object sender, InfoStrat.VE.VECameraChangedEventArgs e)
+        {
+           var map = sender as InfoStrat.VE.VEMap;
+           if (map != null)
+           {
+               if (manualSliderZoom == false)
+               {
+                   UpdateSlider(map.Altitude);    
+               }
+           } 
         }
 
         #region unnecessary
@@ -122,61 +123,20 @@ namespace InfoStratSample
 
         private void SVEMap_ContactDown(object sender, ContactEventArgs e)
         {
-            //if (e.Contact.IsFingerRecognized && isInDoubleClick && (e.Timestamp - oldTimeStamp) < 300)
-            //{
-            //    var p = e.Contact.GetPosition(SVEMap);
-            //    var ll = SVEMap.PointToLatLong(p);
-            //    SVEMap.FlyTo(ll, SVEMap.Pitch, SVEMap.Yaw, SVEMap.Altitude / 5, null);
-            //    isInDoubleClick = false;
-            //}
-            //else if (e.Contact.IsFingerRecognized && isInDoubleClick && (e.Timestamp - oldTimeStamp) > 299)
-            //{
-            //    isInDoubleClick = false;
-            //}
-            //if (e.Contact.IsFingerRecognized && !isInDoubleClick)
-            //{
-            //    oldTimeStamp = e.Timestamp;
-            //    isInDoubleClick = true;
-            //}
 
         }
 
         private void SVEMap_PreviewContactDown(object sender, ContactEventArgs e)
         {
-            //if (RBNybrid.IsChecked.Value)
-            //{
-            //    SurfaceVEPushPin pp = new SurfaceVEPushPin();
-            //    var pos = e.Contact.GetPosition(SVEMap);
-            //    //var p = SVEMap.PointFromScreen(pos);
-            //    var ll = SVEMap.PointToLatLong(pos);
-            //    pp.Longitude = ll.Longitude;
-            //    pp.Latitude = ll.Latitude;
-            //    pp.Content = string.Format("position1: x:{0} y:{1}, positionfrom screen x:{2} y:{3}, latitude: {4}, longitude: {5}",
-            //        pos.X, pos.Y, pos.X, pos.Y, ll.Longitude, ll.Latitude);
-            //    SVEMap.Items.Add(pp);
-            //    return;
-            //}
-
-            //if (e.Contact.IsFingerRecognized && isInDoubleClick && (e.Timestamp - oldTimeStamp) < 300)
-            //{
-            //    var p = e.Contact.GetPosition(SVEMap);
-            //    var ll = SVEMap.PointToLatLong(p);
-            //    SVEMap.FlyTo(ll, SVEMap.Pitch, SVEMap.Yaw, SVEMap.Altitude / 5, null);
-            //    isInDoubleClick = false;
-            //}
-            //else if (e.Contact.IsFingerRecognized && isInDoubleClick && (e.Timestamp - oldTimeStamp) > 299)
-            //{
-            //    isInDoubleClick = false;
-            //}
-            //if (e.Contact.IsFingerRecognized && !isInDoubleClick)
-            //{
-            //    oldTimeStamp = e.Timestamp;
-            //    isInDoubleClick = true;
-            //}
 
         }
 
-        
+        protected override void  OnPreviewContactDown(ContactEventArgs e)
+        {
+            zoomItem.Visibility = Visibility.Collapsed;
+        }
+    
+
         private void SVEMap_ContactHoldGesture(object sender, ContactEventArgs e)
         {
             zoomItem.Visibility = Visibility.Visible;
@@ -187,8 +147,6 @@ namespace InfoStratSample
 
             zoomItem.Margin = new Thickness(p.X-50.0, p.Y-50.0, 0, 0);
         }
-
-
 
         private void MapZoomIn(object sender, ContactEventArgs e)
         {
@@ -201,7 +159,29 @@ namespace InfoStratSample
         {
             var p = e.Contact.GetPosition(SVEMap);
             var ll = SVEMap.PointToLatLong(p);
-            SVEMap.FlyTo(ll, SVEMap.Pitch, SVEMap.Yaw, SVEMap.Altitude * 5, null);
+			double currentHeight =SVEMap.Altitude * 5;
+            SVEMap.FlyTo(ll, SVEMap.Pitch, SVEMap.Yaw, currentHeight, null);
         }
+
+		private void UpdateSlider(double value)
+		{
+		    ZoomSlider.Value = (Math.Log(value, pModSlider));
+		}
+
+        private void ZoomSlider_ContactChanged(object sender, ContactEventArgs e)
+        {
+            SVEMap.FlyTo(SVEMap.GetCameraPosition(), SVEMap.Pitch, SVEMap.Yaw, Math.Pow(pModSlider, ZoomSlider.Value), null);   
+        }
+
+        private void ZoomSlider_ContactEnter(object sender, ContactEventArgs e)
+        {
+            manualSliderZoom = true;
+        }
+
+        private void ZoomSlider_ContactLeave(object sender, ContactEventArgs e)
+        {
+            manualSliderZoom = false;
+        }
+
     }
 }
