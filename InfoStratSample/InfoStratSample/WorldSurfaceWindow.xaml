@@ -78,6 +78,8 @@
                           ItemsSource="{Binding Locations}" 
                           ItemTemplate="{StaticResource StandardPushPinTemplate}">
         </sve:SurfaceVEMap>
+      
+        <!--<sve:SurfaceVEMap />-->
 
         <Border x:Name="BDRounded" BorderThickness="0" CornerRadius="15" Background="#FF595959" 
               Opacity="0.5" Margin="-15,50,0,50" RenderTransformOrigin="0.5,0.5">
@@ -137,12 +139,33 @@
                         </LinearGradientBrush>
                     </s:ScatterViewItem.Background>
                     <StackPanel>
+<<<<<<< HEAD
                         <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="6,1,0,0" FontWeight="Bold" ><Run Text="Medarbeidere:"/></TextBlock>
                         <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,1,0,0"><Run Text="68 000 globalt"/></TextBlock>
                         <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15,1,0,0"><Run Text="3 500 i Norden"/></TextBlock>
                         <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="25,1,0,0"><Run Text="600 i Norge"/></TextBlock>
                         <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="30,1,0,0"><Run Text="60 i Stavanger"/></TextBlock>
                         <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="6,10,0,0" FontWeight="Bold"  ><Run Text="Hovedkontor: Paris"/></TextBlock>
+=======
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="6,1,0,0" FontWeight="Bold" >
+                            Employees:
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,1,0,0">
+                            68 000   worldwide
+                       </TextBlock>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15,1,0,0">
+                            3 500   Nordic
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="25,1,0,0">
+                            600   in Norway
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="30,1,0,0">
+                            60   in Stavanger
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="6,10,0,0" FontWeight="Bold" >
+                            Head office: Paris
+                        </TextBlock>
+>>>>>>> 32ad0a985d3c7044e71a0f31cd1e43dce0c47f50
                     </StackPanel>
                 </s:ScatterViewItem>
             </StackPanel>
