@@ -14,7 +14,6 @@
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <ManifestCertificateThumbprint>E29E75D465972234266876351EA32331F318043F</ManifestCertificateThumbprint>
     <ManifestKeyFile>InfoStratSample_TemporaryKey.pfx</ManifestKeyFile>
-<<<<<<< HEAD
     <GenerateManifests>false</GenerateManifests>
     <SignManifests>false</SignManifests>
     <FileUpgradeFlags>
@@ -24,10 +23,6 @@
     <OldToolsVersion>3.5</OldToolsVersion>
     <Utf8Output>true</Utf8Output>
     <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
-=======
-    <GenerateManifests>true</GenerateManifests>
-    <SignManifests>false</SignManifests>
->>>>>>> 32ad0a985d3c7044e71a0f31cd1e43dce0c47f50
     <PublishUrl>C:\GitProjects\Copy\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
