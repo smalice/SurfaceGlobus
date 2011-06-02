@@ -76,16 +76,53 @@
 			</ObjectAnimationUsingKeyFrames>
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.StrokeThickness)" Storyboard.TargetName="Linse_02">
 				<SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
-				<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="1.5"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.8"/>
 			</DoubleAnimationUsingKeyFrames>
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.StrokeThickness)" Storyboard.TargetName="Linse_01">
 				<SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
-				<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="1.5"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.8"/>
 			</DoubleAnimationUsingKeyFrames>
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.StrokeThickness)" Storyboard.TargetName="PushItem">
 				<SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
 				<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
 			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Direction)" Storyboard.TargetName="Linse_01">
+				<SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="315"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="90"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Direction)" Storyboard.TargetName="Linse_02">
+				<SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="315"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="180"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(BlurEffect.Radius)" Storyboard.TargetName="PushItem">
+				<SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="5"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="textBlock">
+				<SplineThicknessKeyFrame KeyTime="0:0:0.5" Value="2,8,0,0"/>
+			</ThicknessAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.FontSize)" Storyboard.TargetName="textBlock">
+				<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="8"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Rectangle.RadiusY)" Storyboard.TargetName="Linse_01">
+				<SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="10"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Linse_01">
+				<SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="20"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="14"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Linse_02">
+				<SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="20"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="14"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Rectangle.RadiusY)" Storyboard.TargetName="Linse_02">
+				<SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="10"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="textBlock1">
+				<SplineThicknessKeyFrame KeyTime="0:0:0.5" Value="0,3,12.5,0"/>
+			</ThicknessAnimationUsingKeyFrames>
 		</Storyboard>
 	</s:SurfaceUserControl.Resources>
 	<s:SurfaceUserControl.RenderTransform>
@@ -99,22 +136,22 @@
 	<s:SurfaceUserControl.Triggers>
 		<EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
 	</s:SurfaceUserControl.Triggers>
-    <Grid x:Name="ItemGrid" Width="50" Height="50" Margin="31,28,19,22">
+    <Grid x:Name="ItemGrid" Width="50" Height="50" Margin="31,28,19,22" Opacity="0.65">
     	<Grid.ColumnDefinitions>
     		<ColumnDefinition Width="0*"/>
     		<ColumnDefinition/>
     	</Grid.ColumnDefinitions>
-    	<Ellipse x:Name="PushItem" Fill="SteelBlue" Stroke="Black" Width="40" Height="40" Panel.ZIndex="3" 
+    	<Ellipse x:Name="PushItem" Fill="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" Stroke="Black" Width="40" Height="40" Panel.ZIndex="3" 
                  Grid.Column="1" Margin="-2.25,2.5,7.5,2.5" HorizontalAlignment="Center" VerticalAlignment="Center">
     		<Ellipse.Effect>
-    			<BlurEffect Radius="2"/>
+    			<BlurEffect/>
     		</Ellipse.Effect>
     	</Ellipse>
-    	<Rectangle x:Name="Linse_02" Fill="SteelBlue" Stroke="Black" Margin="0.25,0,10,0" Width="20" RadiusX="10" 
+    	<Rectangle x:Name="Linse_02" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" Margin="0.25,0,10,0" Width="20" RadiusX="10" 
                    RadiusY="10" Height="30" RenderTransformOrigin="0.5,0.5" Grid.Column="1" HorizontalAlignment="Center" 
                    VerticalAlignment="Center">
     		<Rectangle.Effect>
-    			<BlurEffect Radius="2"/>
+    			<DropShadowEffect/>
     		</Rectangle.Effect>
     		<Rectangle.RenderTransform>
     			<TransformGroup>
@@ -125,11 +162,11 @@
     			</TransformGroup>
     		</Rectangle.RenderTransform>
     	</Rectangle>
-    	<Rectangle x:Name="Linse_01" Fill="SteelBlue" Stroke="Black" Margin="0.25,0,10,0" Width="20" RadiusX="10" 
+    	<Rectangle x:Name="Linse_01" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" Stroke="Black" Margin="0.25,0,10,0" Width="20" RadiusX="10" 
                    RadiusY="10" Height="30" RenderTransformOrigin="0.5,0" Grid.Column="1" HorizontalAlignment="Center" 
                    VerticalAlignment="Center">
     		<Rectangle.Effect>
-    			<BlurEffect Radius="2"/>
+    			<DropShadowEffect/>
     		</Rectangle.Effect>
     		<Rectangle.RenderTransform>
     			<TransformGroup>
