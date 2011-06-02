@@ -58,7 +58,12 @@
         </DataTemplate>
     </s:SurfaceWindow.Resources>
 
-    <Grid Background="White">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush 
+                ImageSource="pack://application:,,,/Resources/Brand_Slogan_Cloud_Bkgd_HR_300dpi.jpg"  
+                Stretch="Fill"/>
+        </Grid.Background>
         <Grid>
             <blake:InputFilter.Filter>
                 <filters:PushMotionInputFilter />
@@ -68,41 +73,6 @@
                            Background="{x:Null}"
                            ItemsSource="{Binding Images}"
                            ItemTemplate="{StaticResource SVITemplate}" />
-            <!--<blakesurf:DragDropScatterView ItemContainerStyle="{StaticResource ScatterViewItemStyle}"
-                                           Background="{x:Null}">
-                <s:ScatterViewItem x:Name="sviDesert"
-                                   Center="-600,-450"
-                                   Orientation="-30"
-                                   MinWidth="300"
-                                   MinHeight="200"
-                                   blakesurf:DragDropScatterView.AllowDrag="True">
-                    <Image Source="Images\Desert.jpg"
-                           Width="600"
-                           Height="450"></Image>
-                </s:ScatterViewItem>
-
-                <s:ScatterViewItem x:Name="sviJellyfish"
-                                   Center="-600,-450"
-                                   Orientation="-30"
-                                   MinWidth="300"
-                                   MinHeight="200"
-                                   blakesurf:DragDropScatterView.AllowDrag="True">
-                    <Image Source="Images\Jellyfish.jpg"
-                           Width="600"
-                           Height="450"></Image>
-                </s:ScatterViewItem>
-
-                <s:ScatterViewItem x:Name="sviPenguins"
-                                   Center="-600,-450"
-                                   Orientation="-30"
-                                   MinWidth="300"
-                                   MinHeight="200"
-                                   blakesurf:DragDropScatterView.AllowDrag="True">
-                    <Image Source="Images\Penguins.jpg"
-                           Width="600"
-                           Height="450"></Image>
-                </s:ScatterViewItem>
-            </blakesurf:DragDropScatterView>-->
         </Grid>
 
         <Grid HorizontalAlignment="Right"
@@ -112,18 +82,28 @@
             <blake:InputFilter.Filter>
                 <filters:HoverInputFilter />
             </blake:InputFilter.Filter>
-            <StackPanel VerticalAlignment="Center"
+            <StackPanel VerticalAlignment="Top"
                         HorizontalAlignment="Center"
-                        Margin="0,-200,0,0">
+                        Margin="0,20,0,0">
+                <Controls:MotionButton x:Name="ButtonShutDown"
+                                       Click="ButtonShutDown_Click"
+                                       Background="LightGray"
+                                       Margin="0,0,0,100"
+                                       Height="60"
+                                       Width="80">
+                    <TextBlock FontSize="16"
+                               FontWeight="Bold">Close</TextBlock>
+                </Controls:MotionButton>
+                
                 <controls:MotionToggleButton Checked="MotionToggleButtonDesert_Checked"
                                              Unchecked="MotionToggleButtonDesert_Unchecked"
                                              HorizontalAlignment="Center"
                                              Margin="0,0,0,20"
-                                             Background="LightGray"
+                                             
                                              Width="110"
                                              Height="80">
                     <TextBlock FontSize="16"
-                               FontWeight="Bold">Desert</TextBlock>
+                               FontWeight="Bold">People</TextBlock>
                 </controls:MotionToggleButton>
 
                 <controls:MotionToggleButton Checked="MotionToggleButtonJellyfish_Checked"
@@ -132,9 +112,9 @@
                                              Margin="0,0,0,20"
                                              Width="110"
                                              Height="80"
-                                             Background="Green">
+                                             >
                     <TextBlock FontSize="16"
-                               FontWeight="Bold">Jellyfish</TextBlock>
+                               FontWeight="Bold">Capgemini</TextBlock>
                 </controls:MotionToggleButton>
 
                 <Controls:MotionToggleButton Checked="MotionToggleButtonPenguins_Checked"
@@ -143,20 +123,23 @@
                                              Margin="0,0,0,20"
                                              Width="110"
                                              Height="80"
-                                             Background="Brown">
+                                             >
                     <TextBlock FontSize="16"
-                               FontWeight="Bold">Penguins</TextBlock>
+                               FontWeight="Bold">Logo</TextBlock>
                 </Controls:MotionToggleButton>
 
-                <Controls:MotionButton x:Name="ButtonShutDown"
-                                       Click="ButtonShutDown_Click"
-                                       Background="LightGray"
-                                       Margin="0,50,0,0"
-                                       Height="60"
-                                       Width="80">
+                <Controls:MotionToggleButton Checked="MotionToggleButtonGravity_Checked"
+                                             Unchecked="MotionToggleButtonGravity_Unchecked"
+                                             HorizontalAlignment="Center"
+                                             Margin="0,0,0,20"
+                                             Width="110"
+                                             Height="80"
+                                             >
                     <TextBlock FontSize="16"
-                               FontWeight="Bold">Close</TextBlock>
-                </Controls:MotionButton>
+                               FontWeight="Bold">Gravity</TextBlock>
+                </Controls:MotionToggleButton>
+
+
             </StackPanel>
         </Grid>
 

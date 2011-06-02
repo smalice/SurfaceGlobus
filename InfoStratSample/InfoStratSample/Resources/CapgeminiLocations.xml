@@ -349,4 +349,356 @@
     <Tlf>+1 (212) 314-8000</Tlf>
     <CountryTlf>+1 (212) 314-8000</CountryTlf>
   </Location>
+<Location>
+    <Country>Australia</Country>
+    <Name>Sydney</Name>
+    <Longitude>151.2070914</Longitude>
+    <Latitude>-33.8689009</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Level 7, 77 King Street
+	Sydney NSW 2000, Sydney </Address>
+    <Tlf>+61 (2) 9293 4444</Tlf>
+    <CountryTlf>+61 (2) 9293 4000</CountryTlf>
+  </Location>
+ <Location>
+    <Country>Australia</Country>
+    <Name>Adelaide</Name>
+    <Longitude>138.5999594</Longitude>
+    <Latitude>-35.3080556</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Level 6, 55 Grenfell Street
+Adelaide SA 5000, Adelaide </Address>
+    <Tlf>+61 (8) 8113 8000 </Tlf>
+    <CountryTlf>+61 (8) 8113 8295</CountryTlf>
+  </Location>
+ <Location>
+    <Country>Australia</Country>
+    <Name>Canberra</Name>
+    <Longitude>149.1244444</Longitude>
+    <Latitude>-35.3080556</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Level 12, 14 Moore Street
+Canberra ACT 2600 </Address>
+    <Tlf>+61 (2) 6276 2000 </Tlf>
+    <CountryTlf>+61 (2) 6262 9587</CountryTlf>
+  </Location>
+ <Location>
+    <Country>Australia</Country>
+    <Name>Melbourne</Name>
+    <Longitude>144.9629796</Longitude>
+    <Latitude>-37.8131869</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Olderfleet Building Level 2
+477 Collins Street Melbourne VIC 3000,Melbourne </Address>
+    <Tlf>+61 (3) 9613 3000 </Tlf>
+    <CountryTlf>+61 (3) 9613 3333</CountryTlf>
+  </Location>
+<Location>
+    <Country>China</Country>
+    <Name>Shanghai</Name>
+    <Longitude>121.473704</Longitude>
+    <Latitude>31.230393</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Capgemini Center
+	No. 11 Boxia Rd., Zhangjiang High-tech Park, Shanghai, PRC
+	Post Code: 201203, Shanghai </Address>
+    <Tlf>+86 21 6182 2688 </Tlf>
+    <CountryTlf>+86 21 6182 2688</CountryTlf>
+  </Location>
+ <Location>
+    <Country>China</Country>
+    <Name>Bejing</Name>
+    <Longitude>116.407413</Longitude>
+    <Latitude>39.904214</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Unit 803-806, Capital Tower, No.6. Jia JianGuoMenwai, 
+Avenue, Chao Yang District, Beijing </Address>
+    <Tlf>+86 10 65637388 </Tlf>
+    <CountryTlf>+86 10 65637399 </CountryTlf>
+  </Location>
+ <Location>
+    <Country>China</Country>
+    <Name>Guangzhou</Name>
+    <Longitude>113.264435</Longitude>
+    <Latitude>23.129163</Latitude>
+    <Altitude>0</Altitude>
+    <Address>37-38/F, Renfeng Building, 490 Tianhe Road, Tianhe District, Guangzhou, PRC. Postcode: 510620
+	Guangzhou </Address>
+    <Tlf>+86 20 2838 5888 </Tlf>
+    <CountryTlf>+86 20 2838 5999 </CountryTlf>
+  </Location>
+<Location>
+    <Country>China</Country>
+    <Name>Hong Kong</Name>
+    <Longitude>116.1163703</Longitude>
+    <Latitude>5.9931828</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Suite 501A, 5F, 9 Queen’s Road Central, 
+	Hong Kong</Address>
+    <Tlf>+852 3512 3888 </Tlf>
+    <CountryTlf>852 2869 7004</CountryTlf>
+  </Location>
+<Location>
+    <Country>China</Country>
+    <Name>Kun Shan</Name>
+    <Longitude>120.98115</Longitude>
+    <Latitude>31.384913</Latitude>
+    <Altitude>0</Altitude>
+    <Address>24F, Asia Plaza, 18 Zhaofeng Road
+	Huaqiao International Service Business Park
+	Kunshan, Jiangsu </Address>
+    <Tlf>+86 512 8186 7000 </Tlf>
+    <CountryTlf>+86 512 8186 7020 </CountryTlf>
+  </Location>
+<Location>
+    <Country>India</Country>
+    <Name>Mumbai</Name>
+    <Longitude>72.8561644</Longitude>
+    <Latitude>19.0176147</Latitude>
+    <Altitude>0</Altitude>
+    <Address>SEP2-B3, Godrej Industries Complex 
+	Eastern Express Highway, Vikhroli (E)
+	Mumbai 400079 </Address>
+    <Tlf>+91 22 6755 7000  </Tlf>
+    <CountryTlf>+91 22 6755 7100  </CountryTlf>
+  </Location>
+<Location>
+    <Country>India</Country>
+    <Name>Bangalore</Name>
+    <Longitude>77.5945627</Longitude>
+    <Latitude>12.9715987</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Campus 1B, RMZ Ecospace Outer Ring Road,
+	Bellandur Varthru Hobli, Marathahalli, 
+	Bangalore 560 037</Address>
+    <Tlf>+91 80 6656 7000 </Tlf>
+    <CountryTlf>+91 22 6755 7100</CountryTlf>
+  </Location>
+<Location>
+    <Country>India</Country>
+    <Name>Chennai</Name>
+    <Longitude>80.249583</Longitude>
+    <Latitude>13.060422</Latitude>
+    <Altitude>0</Altitude>
+    <Address>455 Anna Salai
+	TeynampetChennai - 600018
+	Chennai </Address>
+    <Tlf>+91 44 6633 1000 </Tlf>
+    <CountryTlf>+91 44 6633 1002</CountryTlf>
+  </Location>
+<Location>
+    <Country>India</Country>
+    <Name>Hyderabad</Name>
+    <Longitude>78.486671</Longitude>
+    <Latitude>17.385044</Latitude>
+    <Altitude>0</Altitude>
+    <Address>IT Park 1,115 / 32
+Nanakram Guda, Gachibowli
+Hyderabad - 500 032,Hyderabad </Address>
+    <Tlf>+91 040 2312 6000 </Tlf>
+    <CountryTlf>+91 040 2312 6002</CountryTlf>
+  </Location>
+<Location>
+    <Country>India</Country>
+    <Name>Kolkata</Name>
+    <Longitude>88.0</Longitude>
+    <Latitude>22.0</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Asyst Park, GN 37/1, Sector 5, 
+Salt Lake Electronic City, Kolkata - 700 091
+Kolkata </Address>
+    <Tlf>+91 33 6610 2400 </Tlf>
+    <CountryTlf>+91 33 2357 2889</CountryTlf>
+  </Location>
+<Location>
+    <Country>India</Country>
+    <Name>Pune</Name>
+    <Longitude>73.8567437</Longitude>
+    <Latitude>18.5204303</Latitude>
+    <Altitude>0</Altitude>
+    <Address>A-1, Technology Park, MIDC
+	Talwade, Pune - 412 114
+	Pune </Address>
+    <Tlf>+91 20 2760 1000 </Tlf>
+    <CountryTlf>+91 20 2760 1002</CountryTlf>
+  </Location>
+<Location>
+    <Country>Singapore</Country>
+    <Name>Singapore</Name>
+    <Longitude>103.819836</Longitude>
+    <Latitude>1.352083</Latitude>
+    <Altitude>0</Altitude>
+    <Address>6 Battery Road
+	#16-07/08 Singapore 049909
+	SINGAPORE </Address>
+    <Tlf>+65 6224 6620 </Tlf>
+    <CountryTlf>+65 6224 6770</CountryTlf>
+  </Location>
+<Location>
+    <Country>Taiwan</Country>
+    <Name>Taipei</Name>
+    <Longitude>121.5598345</Longitude>
+    <Latitude>25.091075</Latitude>
+    <Altitude>0</Altitude>
+    <Address>110, 7 Floor, No. 2, Section 5 
+	Hsing-Yi Rd., Taipei, Taiwan
+	Taipei  </Address>
+    <Tlf>+886 2 8780 0909</Tlf>
+    <CountryTlf>+886 2 8780 0707 </CountryTlf>
+  </Location>
+<Location>
+    <Country>Austria</Country>
+    <Name>Vienna</Name>
+    <Longitude>16.3738189</Longitude>
+    <Latitude>48.2081743</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Lassallestrasse 9b
+	A-1020 Wien
+	Vienna  </Address>
+    <Tlf>+43 1 211 63 0 </Tlf>
+    <CountryTlf>+43 1 211 63 5000 </CountryTlf>
+  </Location>
+<Location>
+    <Country>Belgium</Country>
+    <Name>Brussels</Name>
+    <Longitude>4.3517103</Longitude>
+    <Latitude>50.8503396</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Bessenveldstraat 19
+	B-1831 Diegem
+	Brussels  </Address>
+    <Tlf>+32 2 708 1111</Tlf>
+    <CountryTlf>+32 2 708 1110</CountryTlf>
+  </Location>
+<Location>
+    <Country>Croatia</Country>
+    <Name>Zagreb</Name>
+    <Longitude>15.9785145</Longitude>
+    <Latitude>45.814912</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Capgemini Consulting Österreich AG
+	Poslovno savjetovanje - Podružnica Zagreb Centar Kaptol 
+	Nova Ves 11 
+	HR - 10000 Zagreb </Address>
+    <Tlf>+385 1 4860 740</Tlf>
+    <CountryTlf>+385 1 4860 770</CountryTlf>
+  </Location>
+<Location>
+    <Country>Czech Republic</Country>
+    <Name>Prague</Name>
+    <Longitude>14.4204598</Longitude>
+    <Latitude>50.0878114</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Doudlebská 1699/5 
+	140 00 Praha 4
+	Prague </Address>
+    <Tlf>+420 226 517 600</Tlf>
+    <CountryTlf>+420 226 517 601</CountryTlf>
+  </Location>
+<Location>
+    <Country>Denmark</Country>
+    <Name>Vallensbæk</Name>
+    <Longitude>12.367538</Longitude>
+    <Latitude>55.636134</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Delta Park 40
+	2665 Vallensbæk Strand
+	Vallensbæk  </Address>
+    <Tlf>+45 70 11 22 00</Tlf>
+    <CountryTlf>+45 70 11 22 01</CountryTlf>
+  </Location>
+<Location>
+    <Country>Denmark</Country>
+    <Name>Aarhus</Name>
+    <Longitude>10.203921</Longitude>
+    <Latitude>56.162939</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Aahave Parkvej 31
+	8260 Viby J.
+	Aarhus </Address>
+    <Tlf>+45 87 38 70 00</Tlf>
+    <CountryTlf>+45 87 38 70 01</CountryTlf>
+  </Location>
+<Location>
+    <Country>Denmark</Country>
+    <Name>Odense</Name>
+    <Longitude>10.40237</Longitude>
+    <Latitude>55.403756</Latitude>
+    <Altitude>0</Altitude>
+    <Address>Klokkestøbervej 18
+	DK-5220 Odense SØ
+	Odense  </Address>
+    <Tlf>+45 70 11 22 00</Tlf>
+    <CountryTlf>0</CountryTlf>
+  </Location>
+  <Location>
+    <Country>Finland</Country>
+    <Name>Espoo</Name>
+    <Longitude>24.6540814</Longitude>
+    <Latitude>60.2052352</Latitude>
+    <Altitude>0</Altitude>
+    <Address>
+      Niittymäentie 9
+      02200 Espoo
+      Espoo
+    </Address>
+    <Tlf>+358 9 452 651</Tlf>
+    <CountryTlf>+358 9 4526 5900</CountryTlf>
+  </Location>
+  <Location>
+    <Country>Finland</Country>
+    <Name>Helsinki</Name>
+    <Longitude>24.9382401</Longitude>
+    <Latitude>60.1698125</Latitude>
+    <Altitude>0</Altitude>
+    <Address>
+      Vattuniemenkatu 20 B
+      00210 Helsinki
+      Helsinki
+    </Address>
+    <Tlf>+358 9 4526 7750</Tlf>
+    <CountryTlf>+ 358 9 4526 7930</CountryTlf>
+  </Location>
+  <Location>
+    <Country>Finland</Country>
+    <Name>Lappeenranta</Name>
+    <Longitude>28.1869558</Longitude>
+    <Latitude>61.0584427</Latitude>
+    <Altitude>0</Altitude>
+    <Address>
+      Laserkatu 8
+      53850 Lappeenranta
+      Lappeenranta
+    </Address>
+    <Tlf>+358 9 452 651</Tlf>
+    <CountryTlf>+358 9 4526 7935</CountryTlf>
+  </Location>
+  <Location>
+    <Country>Finland</Country>
+    <Name>Tampere</Name>
+    <Longitude>23.7649307</Longitude>
+    <Latitude>61.4979781</Latitude>
+    <Altitude>0</Altitude>
+    <Address>
+      Pyhäjärvenkatu 5 C
+      33200 Tampere
+      Tampere
+    </Address>
+    <Tlf>+358 9 452 651</Tlf>
+    <CountryTlf>+358 9 4526 7933 </CountryTlf>
+  </Location>
+  <Location>
+    <Country>Finland</Country>
+    <Name>Turku</Name>
+    <Longitude>22.268733</Longitude>
+    <Latitude>60.45143</Latitude>
+    <Altitude>0</Altitude>
+    <Address>
+      Pyhäjärvenkatu 5 C
+      33200 Tampere
+      Tampere
+    </Address>
+    <Tlf>+358 9 452 651</Tlf>
+    <CountryTlf>+358 9 4526 7934 </CountryTlf>
+  </Location>
 </ArrayOfLocation>

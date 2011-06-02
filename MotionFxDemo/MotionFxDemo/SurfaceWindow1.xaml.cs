@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Documents;
+using System.Windows.Media;
+using System.Windows.Threading;
 using Blake.NUI.WPF.Touch;
 using InfoStrat.MotionFx;
 using Microsoft.Surface.Presentation.Controls;
@@ -87,16 +89,13 @@ namespace HandTesting
         ImageModel jellyImage;
         ImageModel penguinImage;
 
+        private bool isGravityOn;
+        private readonly DispatcherTimer _gravityTimer;
+
         public SurfaceWindow1(bool isHorizontal)
         {
             InitializeComponent();
 
-            //this.WindowState = System.Windows.WindowState.Normal;
-            //this.Width = 800;
-            //this.Height = 400;
-            //this.Left = 400;
-            //this.Top = 0;
-            //this.IsHorizontal = isHorizontal;
             this.Loaded += new RoutedEventHandler(SurfaceWindow1_Loaded);
 
             MotionTrackingClient = new MotionTrackingClient(this);
@@ -105,13 +104,18 @@ namespace HandTesting
 
             InitData();
             this.DataContext = this;
+
+            _gravityTimer = new DispatcherTimer();
+            _gravityTimer.Tick += GetGavityOn;
+            _gravityTimer.Interval = TimeSpan.FromSeconds(1.0 / 5.0);
+            
         }
 
         private void InitData()
         {
-            desertImage = new ImageModel(new Uri(@"Images\Desert.jpg", UriKind.Relative));
-            jellyImage = new ImageModel(new Uri(@"Images\Jellyfish.jpg", UriKind.Relative));
-            penguinImage = new ImageModel(new Uri(@"Images\Penguins.jpg", UriKind.Relative));
+            desertImage = new ImageModel(new Uri(@"Images\capegemini_07.jpg", UriKind.Relative));
+            jellyImage = new ImageModel(new Uri(@"Images\capegemini_12.jpg", UriKind.Relative));
+            penguinImage = new ImageModel(new Uri(@"Images\temporaryLogo.png", UriKind.Relative));
             Images.Add(desertImage);
             Images.Add(jellyImage);
             Images.Add(penguinImage);
@@ -134,42 +138,83 @@ namespace HandTesting
         {
             var svi = scatterview.ItemContainerGenerator.ContainerFromItem(desertImage) as ScatterViewItem;
             SurfaceAnimateUtility.ThrowSVI(svi, centerPoint, 0, 0.0, 1.0);
+            desertImage.IsVisible = true;
         }
 
         private void MotionToggleButtonDesert_Unchecked(object sender, RoutedEventArgs e)
         {
             var svi = scatterview.ItemContainerGenerator.ContainerFromItem(desertImage) as ScatterViewItem;
             SurfaceAnimateUtility.ThrowSVI(svi, new Point(-600, -450), -30, 0.0, 1.0);
+            desertImage.IsVisible = false;
         }
 
 
         private void MotionToggleButtonJellyfish_Checked(object sender, RoutedEventArgs e)
         {
             var svi = scatterview.ItemContainerGenerator.ContainerFromItem(jellyImage) as ScatterViewItem;
-
             SurfaceAnimateUtility.ThrowSVI(svi, centerPoint, 0, 0.0, 1.0);
+            jellyImage.IsVisible = true;
         }
 
         private void MotionToggleButtonJellyfish_Unchecked(object sender, RoutedEventArgs e)
         {
             var svi = scatterview.ItemContainerGenerator.ContainerFromItem(jellyImage) as ScatterViewItem;
-
             SurfaceAnimateUtility.ThrowSVI(svi, new Point(-600, -450), -30, 0.0, 1.0);
+            jellyImage.IsVisible = false;
         }
 
 
         private void MotionToggleButtonPenguins_Checked(object sender, RoutedEventArgs e)
         {
             var svi = scatterview.ItemContainerGenerator.ContainerFromItem(penguinImage) as ScatterViewItem;
-
             SurfaceAnimateUtility.ThrowSVI(svi, centerPoint, 0, 0.0, 1.0);
+            penguinImage.IsVisible = true;
         }
 
         private void MotionToggleButtonPenguins_Unchecked(object sender, RoutedEventArgs e)
         {
             var svi = scatterview.ItemContainerGenerator.ContainerFromItem(penguinImage) as ScatterViewItem;
-
             SurfaceAnimateUtility.ThrowSVI(svi, new Point(-600, -450), -30, 0.0, 1.0);
+            penguinImage.IsVisible = false;
+        }
+
+        private void MotionToggleButtonGravity_Checked(object sender, RoutedEventArgs e)
+        {
+            isGravityOn = true;
+            _gravityTimer.Start();
+            
+        }
+
+        private void GetGavityOn(object o, EventArgs e)
+        {
+            foreach (var imageModel in Images)
+            {
+                if (imageModel.IsVisible)
+                {
+                    var svi = scatterview.ItemContainerGenerator.ContainerFromItem(imageModel) as ScatterViewItem;
+                    if (svi.ActualCenter.Y < this.ActualHeight - 100)
+                    {
+                        imageModel.dY += 0.25;
+                        SurfaceAnimateUtility.ThrowSVI(svi, new Point(svi.ActualCenter.X, svi.ActualCenter.Y + imageModel.dY),
+                            svi.ActualOrientation, 0.0, 0.1);
+                    }
+                    else 
+                    {
+                        imageModel.dY = 0;
+                    }
+                    
+                }
+            }
+        }
+
+        private void MotionToggleButtonGravity_Unchecked(object sender, RoutedEventArgs e)
+        {
+            isGravityOn = false;
+            _gravityTimer.Stop();
+            foreach (var imageModel in Images)
+            {
+                imageModel.dY = 0;
+            }
         }
     }
 }

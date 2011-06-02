@@ -7,6 +7,10 @@ namespace HandTesting
 {
     public class ImageModel
     {
+        public bool IsVisible;
+
+        public double dY;
+
         public Uri ImageSource { get; set; }
 
         public ImageModel(Uri source)
